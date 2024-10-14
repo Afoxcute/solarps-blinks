@@ -155,7 +155,7 @@ export default function Navbar({}) {
       <Box
         sx={{
           position: "fixed",
-          width: { xs: "100px", md: "154px" },
+          width: { xs: "165px", md: "154px" },
           height: { xs: "42px", md: "64px" },
           borderRadius: "10px",
           left: { xs: "10px", md: "36px" },
@@ -178,12 +178,20 @@ export default function Navbar({}) {
             background: "url(./images/twitter.png)",
           }}
         />
-        <IconButton
+        {/* <IconButton
           sx={{
             marginLeft: "5px",
             background: "url(./images/discord.png)",
           }}
-        />
+        /> */}
+     <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+  <IconButton
+    sx={{
+      marginLeft: "5px",
+      background: "url(./images/discord.png)",
+    }}
+  />
+</a>
       </Box>
       <Button
         sx={{
