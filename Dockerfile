@@ -42,7 +42,7 @@ RUN apk add --no-cache git
 RUN yarn install 
 #--only=prod
 COPY . .
-RUN yarn generate
+RUN yarn start
 
 # production stage
 FROM nginx:stable-alpine as production-stage
