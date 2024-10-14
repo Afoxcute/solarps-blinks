@@ -52,6 +52,7 @@ jobs:
             git config --global credential.helper store
             echo "machine github.com login ${{ secrets.GIT_TOKEN }} password x-oauth-basic" > ~/.netrc
             echo "Pulling the updated commit into the server"
+            cd ~/solarps-blinks
             git checkout main
             git pull origin main
  
@@ -71,6 +72,7 @@ jobs:
           port: ${{ secrets.TEST_PORT }}
 
           script: |
+            cd ~/solarps-blinks
             sudo docker stop test || true
             sudo docker rm -f test || true
             sudo docker build -t test .
@@ -91,5 +93,6 @@ jobs:
           port: ${{ secrets.TEST_PORT }}
 
           script: |
+            cd ~/solarps-blinks
             sudo docker build -t test .
             sudo docker run -d --name test -p 3000:3000 test
