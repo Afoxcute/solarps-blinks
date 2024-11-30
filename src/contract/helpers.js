@@ -26,6 +26,9 @@ import {
   OPERATOR_WALLET_KEY,
 } from "../config";
 
+import { sendClientTransactions } from "@honeycomb-protocol/edge-client/client/walletHelpers";
+import { client } from "./client";
+
 const IDL = require("./rps_game.json");
 const PublicKey = anchor.web3.PublicKey;
 const connection = new anchor.web3.Connection(
@@ -420,3 +423,5 @@ export async function sendTransaction(wallet, transaction) {
     return null;
   }
 }
+
+

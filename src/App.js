@@ -32,10 +32,10 @@ import Play from "./pages/play";
 
 function App() {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Devnet;
+  const network = "https://rpc.test.honeycombprotocol.com";
 
   // You can also provide a custom RPC endpoint.
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = useMemo(() => network, [network]);
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
